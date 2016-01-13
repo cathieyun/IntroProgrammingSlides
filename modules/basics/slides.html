@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Basics</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href='../template/css/fonts/fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../template/css/reset.css">
+<link rel="stylesheet" href="../template/css/main.css">
+<link rel="stylesheet" href="../template/css/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="../template/lib/css/zenburn.css">
+</head>
+
+<body>
+<div class="reveal">
+  <!-- Used to fade in a background when a specific slide state is reached -->
+  <div class="state-background"></div>
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    
+<section>
+  <h1>JavaScript Basics</h1>
+  <h3 class="inverted">Getting started with values, variables, evaluation, functions, loops, and arrays</h3>
+  <p>
+  <i>
+ <a>Cathie Yun</a></i>
+  </p>
+  
+  <script>
+    // Deliciously hacky. Look away.
+    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+  </script>
+</section>
+
+<section>
+  <section>
+  <h2>The Building Blocks</h2>
+  <ul>
+    <li>Values: Numbers, strings, arrays & booleans</li>
+    <li>Variables: How we save and work with values</li>
+  </ul>
+  </section>
+
+  <section>
+  <h2>Values: Numbers, strings, arrays & booleans</h2>
+  <ul>
+    <li>A <i>value</i> is the simplest unit of programming.</li>
+    <li>A <i>value</i> can have different <i>types</i>.</li>  
+    <  
+  </ul>
+  <iframe src="code/execution.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Operators & Precedence</h2>
+  <ul>
+    <li>Operators have <i>precedence</i></li>
+  </ul>
+  <iframe src="code/precedence.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Numbers</h2>
+  <ul>
+    <li>No <i>integer/float</i> distinction</li>
+    <li>(Almost) no <i>overflow</i></li>
+    <li>Exercise: make it overflow</li>
+  </ul>
+  <iframe src="code/numbers.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Strings</h2>
+  <ul>
+    <li>No separate <i>character</i> type</li>
+    <li>String <i>literal</i> enclosed in single or double quotes</li>
+    <li>Plus sign for <i>concatenation</i>; can use to format code</li>
+    <li>Built in <i>methods</i> includes lastIndexOf, eg</li>
+  </ul>
+  <iframe src="code/strings.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Arrays</h2>
+  <ul>
+    <li>Grow and shrink <i>dynamically</i></li>
+    <li>Can have holes: element is <i>undefined</i></li>
+  </ul>
+  <iframe src="code/arrays.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Objects</h2>
+  <ul>
+    <li>Object <i>literal</i>: {s: e, ...}</i> makes object with slot <i>s</i> holding value of <i>e</i></li>
+    <li><i>o.s</i> is an expression; evaluates to value held in slot <i>s</i> of object <i>o</i></li>
+    <li><i>o.s = e</i> updates slot <i>s</i> with value of <i>e</i></li>
+  </ul>
+  <iframe src="code/objects.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Booleans</h2>
+  <ul>
+    <li><i>Comparison</i> operators standard, but use === instead of ==</li>
+    <li><i>Boolean expressions</i> in standard form</li>
+  </ul>
+  <iframe src="code/booleans.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+
+<section>
+  <section>
+  <h2>Types & assignment</h2>
+  <ul>
+    <li>Dynamic typing</li>
+    <li>Mutable vs. immutable</li>
+    <li>Sharing and aliasing</li>
+  </ul>
+  </section>
+
+  <section>
+  <h2>Typeof</h2>
+  <ul>
+    <li>Built-in operator that returns a string</li>
+    <li>Shows some of the rough edges of JavaScript</li>
+  </ul>
+  <iframe src="code/typeof.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Typed values</h2>
+  <ul>
+    <li>Interpreter tracks types of values at runtime</li>
+    <li>Only applies operators that are allowed for that type</li>
+    <li>If non-existent method applied, get error message</li>
+    <li>If operator applied to wrong type, usually get a special value back</li>
+  </ul>
+  <iframe src="code/typedval.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Untyped variables</h2>
+  <ul>
+    <li>Common feature of <i>dynamic</i> languages</li>
+    <li>Variable can hold values of different types at different times</li>
+    <li>Operators are <i>overloaded</i>: beware strange bugs!</li>
+    <li>Also, arrays are <i>heterogeneous</i></li>
+  </ul>
+  <iframe src="code/untypedvar.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Untyped objects</h2>
+  <ul>
+    <li>Objects aren't typed</li>
+    <li>Can add and remove slots dynamically</li>
+    <li>Misspellings lead to nasty bugs!</li>
+  </ul>
+  <iframe src="code/untypedobj.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Mutable vs immutable</h2>
+  <ul>
+    <li>Numbers, booleans, strings are <i>immutable</i></li>
+    <li>Arrays and objects are <i>mutable</i></li>
+  </ul>
+  <iframe src="code/immutable.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Aliasing</h2>
+  <ul>
+    <li>Assignment of mutable values results in <i>aliasing</i></li>
+    <li>After assignment, total symmetry: modify value through either name</li>
+    <li>Aliasing is essential for passing mutable objects, but can lead to subtle bugs</li>
+    <li>A reason to use immutables: no aliasing, no need to copy</li>
+  </ul>
+  <iframe src="code/aliasing.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Puzzle</h2>
+  <ul>
+    <li>What is <i>a[0]</i> at the end of this code?</li>
+  </ul>
+  <iframe src="code/puzzle.html" width="800" height="500" ></iframe>
+  </section>
+
+</section>
+
+<section>
+  <section>
+  <h2>Functions and names</h2>
+  <ul>
+    <li>Functions are values</li>
+    <li>All names are variables</li>
+    <li>More an assignment semantics</li>
+  </ul>
+  </section>
+  
+  <section>
+  <h2>Function values</h2>
+  <ul>
+    <li>A <i>function literal</i> evaluates to a function</li>
+    <li>A function is a value like any other: can assign, pass around, etc</li>
+    <li>Can you explain this code?</li>
+  </ul>
+  <iframe src="code/funvalue.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Polymorphic functions</h2>
+  <ul>
+    <li>Functions are naturally <i>polymorphic</i></li>
+    <li>Can have different type on each application</li>
+  </ul>
+  <iframe src="code/funpoly.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Names</h2>
+  <ul>
+    <li>In JS, all names are variables (or slots); cf. Java with packages, methods, etc</li>
+    <li>So can accidentally replace built-in functions</li>
+  </ul>
+  <iframe src="code/escape.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Explaining Recursion</h2>
+  <ul>
+    <li>In some languages, need <i>letrec</i>: special construct for recursive binding</li>
+    <li>In JS, assignment semantics gives us easy recursion</li>
+    <li>See next slide</li>
+  </ul>
+  <iframe src="code/recursion.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Exploring Function Bindings</h2>
+  <ul>
+    <li>Reload, and remove assignment to <i>exp1</i></li>
+    <li>When is exception thrown?</li>
+  </ul>
+  <iframe src="code/recursionagain.html" width="800" height="500" ></iframe>
+  </section>
+  
+  <section>
+  <h2>Global Variables</h2>
+  <ul>
+    <li>By default, all variables are <i>global</i></li>
+    <li>Defined in the <i>top-level environment</i></li>
+    <li>Modifying a global is a <i>side effect</i></li>
+  </ul>
+  <iframe src="code/globals.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Functions aren't functions</h2>
+  <ul>
+    <li>In algebra, <i>f(x) = f(x)</i> is always true</li>
+    <li>In JavaScript, <i>f(x) === f(x)</i> may evaluate to false</li>
+    <li>If so, function <i>f</i> is <i>non-deterministic</i></li>
+    <li>Exercise: print false, by modifying <i>body</i> of <i>f</i> alone</li>
+  </ul>
+  <iframe src="code/notfun.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Solution to exercise</h2>
+  <ul>
+    <li>Call another non-deterministic function (eg, <i>Math.random</i>)</li>
+    <li>Or, more interesting: a self-modifying function</li>
+  </ul>
+  <iframe src="code/selfmod.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>A tricky function example</h2>
+  <ul>
+    <li>How does this work?</li>
+  </ul>
+  <iframe src="code/tricky.html" width="800" height="500" ></iframe>
+  </section>
+
+
+</section>
+
+
+<section>
+  <h1>THE END</h1>
+</section>
+
+</div>
+  <!-- The navigational controls UI -->
+  <aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+  </aside>
+
+  <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+  <div class="progress"><span></span></div>
+  
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+<script src="../template/lib/js/head.min.js"></script>
+
+<script>
+  // Load the main reveal.js script
+  head.js( '../template/js/reveal.js', function() {
+    // Parse the query string into a key/value object
+    var query = {};
+
+    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+      query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+    } );
+
+    // Fires when a slide with data-state=customevent is activated
+    Reveal.addEventListener( 'customevent', function() {
+      print( '"customevent" has fired' );
+    } );
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    } );
+
+    Reveal.initialize({
+      // Display controls in the bottom right corner
+      controls: true,
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // If true; each slide will be pushed to the browser history
+      history: true,
+
+      // Loops the presentation, defaults to false
+      loop: false,
+
+      // Flags if mouse wheel navigation should be enabled
+      mouseWheel: true,
+
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+
+      // UI style
+      theme: query.theme || 'beige', // default/neon/beige
+
+      // Transition style
+      transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+  } );
+  
+  // Load third party scripts
+  head.js( '../template/lib/js/classList.js' );
+  head.js( '../template/lib/js/highlight.js', function() {
+    // Fire off syntax highlighting for potential code samples in the slides
+    hljs.initHighlightingOnLoad();
+  } );
+
+  // If we're runnning the notes server we need to include some additional JS
+  // TODO Is there a better way to determine if we're running the notes server?
+  if( window.location.host === 'localhost:1947' ) {
+    head.js( 'socket.io/socket.io.js', '../template/plugin/speakernotes/client.js' );
+  }
+</script>
+
+<script>
+
+  function popup(url) {
+    window.open(url);
+  }
+
+</script>
+
+</body>
+</html>
