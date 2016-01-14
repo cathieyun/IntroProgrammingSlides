@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<script>
+</script>
+
+<textarea id="code" name="code">
+// Find out how much total money the bank is holding!
+var database = {"anne":10, "bob":72, "cathie":88, "david":18};
+var total = 0;
+for (i in database) {
+  print(i+" has $"+database[i]);
+  // how will you add the account value to the total?
+}
+print("The total amount the bank has is: $"+ total);</textarea>
+<div id="output"><i>Output</i></div>
+</body>
+</html>

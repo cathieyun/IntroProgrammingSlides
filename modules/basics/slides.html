@@ -24,7 +24,7 @@
     
 <section>
   <h1>JavaScript Basics</h1>
-  <h3 class="inverted">Getting started with values, variables, evaluation, functions, loops, and arrays</h3>
+  <h3 class="inverted">Getting started with values, variables, evaluation, functions, loops, and conditionals.</h3>
   <p>
   <i>
  <a>Cathie Yun</a></i>
@@ -38,260 +38,119 @@
 
 <section>
   <section>
-  <h2>The Building Blocks</h2>
+  <h2>Intro to Programming</h2>
   <ul>
-    <li>Values: Numbers, strings, arrays & booleans</li>
-    <li>Variables: How we save and work with values</li>
+    <li>Learning to program is like learning a new language!</li>
+    <li>Spoken language is how humans talk to humans. <br> Programming language is how humans talk to computers.</li>
+    <li>When you're learning a new language, what makes it interesting? <br> What helps you understand faster? <br> What makes it fun?</li>
   </ul>
   </section>
-
   <section>
-  <h2>Values: Numbers, strings, arrays & booleans</h2>
+  <h2>What is Javascript?</h2>
+  <ul>
+    <li>Javascript is a programming language that acts as the logic for all websites. (demo)</li>
+    <li>We'll be learning Javascript because it is extremely easy to see your code in action.</li>
+    <li>What you'll learn today will be applicable to other programming languages too!</li>
+  </ul>
+  </section>
+  <section>
+  <h2>How can I do all this stuff myself?</h2>
+  <ul>
+    <li>Meet the console! (demo)</li>
+    <li>For more complex tasks - create "___.js" files on your computer and run them from command line.</li>
+    <li>Programming on your own is the best way to learn - I'm just giving you the tools.</li>
+    <li>You can look at other peoples' code too, <a href="https://github.com/cathieyun/">GITHUB</a> is a great resource!</li>
+  </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+  <h2>The Building Blocks: Values</h2>
   <ul>
     <li>A <i>value</i> is the simplest unit of programming.</li>
     <li>A <i>value</i> can have different <i>types</i>.</li>  
-    <  
+    <li>Different <i>types</i> of values can do different things, <br> and are formatted different ways</li>
+    <li>Play around to find out how you can manipulate and combine values!</li>
   </ul>
-  <iframe src="code/execution.html" width="800" height="500" ></iframe>
+  <iframe src="code/values.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Operators & Precedence</h2>
+  <h2>The Building Blocks: Variables</h2>
   <ul>
-    <li>Operators have <i>precedence</i></li>
+    <li>What does the word <i>variable</i> mean?</li>
+    <li><i>Variables</i> are ways to store values, and can change their value.</li>
+    <li>Create variables by using the "var" keyword.</li>
+    <li>Store variables by using "=".</li>
   </ul>
-  <iframe src="code/precedence.html" width="800" height="500" ></iframe>
+  <iframe src="code/variables.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Numbers</h2>
+  <h2>The Building Blocks: Functions</h2>
   <ul>
-    <li>No <i>integer/float</i> distinction</li>
-    <li>(Almost) no <i>overflow</i></li>
-    <li>Exercise: make it overflow</li>
+    <li><i>Functions</i> are just actions.</li>
+    <li>You can define your own functions, or use pre-defined functions.</li>
+    <li> <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/">The Javascript reference website</a> shows you how to use pre-defined functions.</li>
+    <li class="transfer">Hack this: I am Cathie and I want to pay Manuel $45.</li>
   </ul>
-  <iframe src="code/numbers.html" width="800" height="500" ></iframe>
+  <iframe src="code/functions.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Strings</h2>
+  <h2>The Building Blocks: Functions</h2>
   <ul>
-    <li>No separate <i>character</i> type</li>
-    <li>String <i>literal</i> enclosed in single or double quotes</li>
-    <li>Plus sign for <i>concatenation</i>; can use to format code</li>
-    <li>Built in <i>methods</i> includes lastIndexOf, eg</li>
+    <li>In javascript, functions are values, just like strings and numbers!</li>
+    <li>Define your own function with the "var" and "function" keywords.</li>
+    <li>Whatever goes in the parenthesis of "function()" are the inputs to the function.</li>
   </ul>
-  <iframe src="code/strings.html" width="800" height="500" ></iframe>
+  <iframe src="code/createFun.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Arrays</h2>
+  <h2>The Building Blocks: Your turn!</h2>
   <ul>
-    <li>Grow and shrink <i>dynamically</i></li>
-    <li>Can have holes: element is <i>undefined</i></li>
+    <li>Using the stealFromManuel function, make a new function.</li>
+    <li>This new function should steal from Manuel, and <br> add several zeros to the end of the dollar amount.</li>
+    <li>Extra challenge: This only works if there is a "0" in the amount. <br> How can you make it work no matter what? </li>
+    <li>Extra challenge: Use the console to hack this text: <br>
+    I am Cathie and I want to pay Manuel $50"</li>
   </ul>
-  <iframe src="code/arrays.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Objects</h2>
-  <ul>
-    <li>Object <i>literal</i>: {s: e, ...}</i> makes object with slot <i>s</i> holding value of <i>e</i></li>
-    <li><i>o.s</i> is an expression; evaluates to value held in slot <i>s</i> of object <i>o</i></li>
-    <li><i>o.s = e</i> updates slot <i>s</i> with value of <i>e</i></li>
-  </ul>
-  <iframe src="code/objects.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Booleans</h2>
-  <ul>
-    <li><i>Comparison</i> operators standard, but use === instead of ==</li>
-    <li><i>Boolean expressions</i> in standard form</li>
-  </ul>
-  <iframe src="code/booleans.html" width="800" height="500" ></iframe>
+  <iframe src="code/nestedFun.html" width="800" height="500" ></iframe>
   </section>
 </section>
 
 <section>
   <section>
-  <h2>Types & assignment</h2>
+  <h2>Getting Fancy: For loops</h2>
   <ul>
-    <li>Dynamic typing</li>
-    <li>Mutable vs. immutable</li>
-    <li>Sharing and aliasing</li>
+    <li>Get lazy - make your program do repetitions for you!</li>
+    <li>For loops are the most basic: do this thing <i>i</i> times.</li>
+    <li>Use "for (i=0; i < ___; i++)" to define loop range.</li>
   </ul>
+  <iframe src="code/forLoop.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Typeof</h2>
+  <h2>Getting Fancy: For In loops</h2>
   <ul>
-    <li>Built-in operator that returns a string</li>
-    <li>Shows some of the rough edges of JavaScript</li>
+    <li>Loop through an array in a more user-friendly way.</li>
+    <li>Acts the same as a for loop, but fetches value for you.</li>
   </ul>
-  <iframe src="code/typeof.html" width="800" height="500" ></iframe>
+  <iframe src="code/forInLoop.html" width="800" height="500" ></iframe>
   </section>
 
   <section>
-  <h2>Typed values</h2>
+  <h2>Getting Fancy: Conditionals</h2>
   <ul>
-    <li>Interpreter tracks types of values at runtime</li>
-    <li>Only applies operators that are allowed for that type</li>
-    <li>If non-existent method applied, get error message</li>
-    <li>If operator applied to wrong type, usually get a special value back</li>
+    <li>Check if some statement is true or false.</li>
+    <li>If it's true do <i>this</i>, otherwise do <i>that</i>.</li>
+    <li>Remember booleans?</li>
   </ul>
-  <iframe src="code/typedval.html" width="800" height="500" ></iframe>
+  <iframe src="code/conditionals.html" width="800" height="500" ></iframe>
   </section>
-
-  <section>
-  <h2>Untyped variables</h2>
-  <ul>
-    <li>Common feature of <i>dynamic</i> languages</li>
-    <li>Variable can hold values of different types at different times</li>
-    <li>Operators are <i>overloaded</i>: beware strange bugs!</li>
-    <li>Also, arrays are <i>heterogeneous</i></li>
-  </ul>
-  <iframe src="code/untypedvar.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Untyped objects</h2>
-  <ul>
-    <li>Objects aren't typed</li>
-    <li>Can add and remove slots dynamically</li>
-    <li>Misspellings lead to nasty bugs!</li>
-  </ul>
-  <iframe src="code/untypedobj.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Mutable vs immutable</h2>
-  <ul>
-    <li>Numbers, booleans, strings are <i>immutable</i></li>
-    <li>Arrays and objects are <i>mutable</i></li>
-  </ul>
-  <iframe src="code/immutable.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Aliasing</h2>
-  <ul>
-    <li>Assignment of mutable values results in <i>aliasing</i></li>
-    <li>After assignment, total symmetry: modify value through either name</li>
-    <li>Aliasing is essential for passing mutable objects, but can lead to subtle bugs</li>
-    <li>A reason to use immutables: no aliasing, no need to copy</li>
-  </ul>
-  <iframe src="code/aliasing.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Puzzle</h2>
-  <ul>
-    <li>What is <i>a[0]</i> at the end of this code?</li>
-  </ul>
-  <iframe src="code/puzzle.html" width="800" height="500" ></iframe>
-  </section>
-
 </section>
-
-<section>
-  <section>
-  <h2>Functions and names</h2>
-  <ul>
-    <li>Functions are values</li>
-    <li>All names are variables</li>
-    <li>More an assignment semantics</li>
-  </ul>
-  </section>
-  
-  <section>
-  <h2>Function values</h2>
-  <ul>
-    <li>A <i>function literal</i> evaluates to a function</li>
-    <li>A function is a value like any other: can assign, pass around, etc</li>
-    <li>Can you explain this code?</li>
-  </ul>
-  <iframe src="code/funvalue.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Polymorphic functions</h2>
-  <ul>
-    <li>Functions are naturally <i>polymorphic</i></li>
-    <li>Can have different type on each application</li>
-  </ul>
-  <iframe src="code/funpoly.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Names</h2>
-  <ul>
-    <li>In JS, all names are variables (or slots); cf. Java with packages, methods, etc</li>
-    <li>So can accidentally replace built-in functions</li>
-  </ul>
-  <iframe src="code/escape.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Explaining Recursion</h2>
-  <ul>
-    <li>In some languages, need <i>letrec</i>: special construct for recursive binding</li>
-    <li>In JS, assignment semantics gives us easy recursion</li>
-    <li>See next slide</li>
-  </ul>
-  <iframe src="code/recursion.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Exploring Function Bindings</h2>
-  <ul>
-    <li>Reload, and remove assignment to <i>exp1</i></li>
-    <li>When is exception thrown?</li>
-  </ul>
-  <iframe src="code/recursionagain.html" width="800" height="500" ></iframe>
-  </section>
-  
-  <section>
-  <h2>Global Variables</h2>
-  <ul>
-    <li>By default, all variables are <i>global</i></li>
-    <li>Defined in the <i>top-level environment</i></li>
-    <li>Modifying a global is a <i>side effect</i></li>
-  </ul>
-  <iframe src="code/globals.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Functions aren't functions</h2>
-  <ul>
-    <li>In algebra, <i>f(x) = f(x)</i> is always true</li>
-    <li>In JavaScript, <i>f(x) === f(x)</i> may evaluate to false</li>
-    <li>If so, function <i>f</i> is <i>non-deterministic</i></li>
-    <li>Exercise: print false, by modifying <i>body</i> of <i>f</i> alone</li>
-  </ul>
-  <iframe src="code/notfun.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>Solution to exercise</h2>
-  <ul>
-    <li>Call another non-deterministic function (eg, <i>Math.random</i>)</li>
-    <li>Or, more interesting: a self-modifying function</li>
-  </ul>
-  <iframe src="code/selfmod.html" width="800" height="500" ></iframe>
-  </section>
-
-  <section>
-  <h2>A tricky function example</h2>
-  <ul>
-    <li>How does this work?</li>
-  </ul>
-  <iframe src="code/tricky.html" width="800" height="500" ></iframe>
-  </section>
-
-
-</section>
-
 
 <section>
   <h1>THE END</h1>

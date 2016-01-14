@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- utf8 encoding essential for funny characters in Ascii art below -->
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<textarea id="code" name="code">
+goodTransfer = "give $50 to Manuel";
+
+var stealFromManuel = function(transfer) {
+  return transfer.replace("Manuel", "hacker");
+}
+// your turn: write a new function here!
+// It should both steal from Manuel and increase the amount.
+</textarea>
+
+<div id="output"><i>Output</i></div>
+</body>
+</html>
