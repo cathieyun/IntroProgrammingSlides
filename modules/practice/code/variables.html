@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <script src="../../../code/data/cities.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<script>
+</script>
+
+<textarea id="code" name="code">
+// FILL IN YOUR CODE HERE:
+// Use the variable myName to get the variable firtLetter.
+print("My name is "+myName+".");
+print("The first letter of my name is "+firstLetter);
+</textarea>
+<div id="output"><i>Output</i></div>
+</body>
+</html>
