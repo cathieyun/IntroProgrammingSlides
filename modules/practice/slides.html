@@ -45,6 +45,7 @@
     <li>If not, what did you get stuck on?</li>
   </ul>
   </section>
+
   <section>
   <h2>Bank homework follow-up</h2>
   <ul>
@@ -66,12 +67,13 @@
   <section>
   <h2>Short Lecture: Passwords</h2>
   <ul>
-    <li>What is "logging in"? Proving your identity!</li>
+    <li>"Logging in" is just proving your identity to a website.</li>
     <li>Send your "proof" (password) to the website's server, it will check database</li>
-    <li>Most simple model: send plain text login information so server. What could go wrong?</li>
-    <li><a href="http://css.csail.mit.edu/6.858/2015/lec/l03-authentication.pdf">6.858 slides</a></li>
+    <li>Most simple model: send plain text login information to server.</li>
+    <li>What could go wrong?</li>
   </ul>
   </section>
+
   <section>
   <h2>What could go wrong?</h2>
   <ul>
@@ -80,34 +82,40 @@
     <li>Solution: hashing!</li>
   </ul>
   </section>
+
   <section>
   <h2>Hashing</h2>
   <ul>
     <li>Hashing takes in a string, outputs "nonsense" (hash).</li>
     <li>One string will always have the same hash.</li>
     <li>If you have a hash, you cannot easily guess the string.</li>
+    <li>Instead of sending and storing plain text, send and store hashes.</li>
     <li>What could go wrong here?</li>
   </ul>
   <iframe src="code/hacked.html" width="800" height="500" ></iframe>
   </section>
+
+  <section>
   <h2>Salting</h2>
   <ul>
     <li>What if your database gets stolen?</li>
-    <li>People have really bad passwords, you can pre-hash the most common ones and check them against database values.</li>
-    <li><a href="http://css.csail.mit.edu/6.858/2015/lec/l03-authentication.pdf">6.858 slides</a></li>
+    <li><a href="http://css.csail.mit.edu/6.858/2015/lec/l03-authentication.pdf">People have really bad passwords!</a></li>
+    <li>You can pre-hash the most common passwords and check them against database values.</li>
     <li>This is called a Rainbow Table attack.</li>
     <li>Solution: Add salts! A random number that is stored with the password.</li>
   </ul>
   <iframe src="code/hacked.html" width="800" height="500" ></iframe>
   </section> 
-  </section>
+
+  <section>
   <h2>How does Salting work?</h2>
   <ul>
-    <li>A Rainbow Table attack will no longer work - can't pre-compute common password hashes.</li>
+    <li>A Rainbow Table attack will no longer work. (Explain why!)</li>
     <li>How could you still find peoples' passwords, if you have the database?</li>
     <li>Lesson: nothing is ever FULLY, PERFECTLY secure! We just have to do our best.</li>
   </ul>
-  </section>   
+  </section> 
+
 </section>
 
 <section>
