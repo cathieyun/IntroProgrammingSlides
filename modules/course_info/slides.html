@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Basics</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href='../template/css/fonts/fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../template/css/reset.css">
+<link rel="stylesheet" href="../template/css/main.css">
+<link rel="stylesheet" href="../template/css/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="../template/lib/css/zenburn.css">
+</head>
+
+<body>
+<div class="reveal">
+  <!-- Used to fade in a background when a specific slide state is reached -->
+  <div class="state-background"></div>
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    
+<section>
+  <h1>Course Information</h1>
+  <h3 class="inverted">About the course, due dates, link to submission forms, useful links.</h3>
+  <p>
+  <i>
+ <a>Cathie Yun</a></i>
+  </p>
+  
+  <script>
+    // Deliciously hacky. Look away.
+    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+  </script>
+</section>
+
+<section>
+  <section>
+  <h2>About these slides</h2>
+  <ul>
+    <li>Use the arrows to navigate through slides.</li>
+    <li>Left/right arrows will jump between sections.</li>
+    <li>Some slides have code - you can run the code in your browser!</li>
+    <li>If you refresh the webpage, your code will get reset - so save your code elsewhere.</li>
+  </ul>
+  <iframe src="code/example.html" width="800" height="500" ></iframe>
+  </section>
+  <section>
+  <h2>How were these slides made?</h2>
+  <ul>
+    <li>The template was created by Prof. Jackson for MIT's <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-170-software-studio-spring-2013/">6.170</a> class.</li>
+    <li>Cathie adapted the slide template, her code is <a href="https://github.com/cathieyun/IntroProgrammingSlides">here</a>.</li>
+    <li>These slides are hosted by <a href="https://www.heroku.com/">heroku</a> as a php app.</li>
+  </ul>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>About this class</h2>
+  <ul>
+    <li>These slides were prepared for a one-month workshop <br> for two classes at the Tecnológico de Monterrey, Mexico City.</li>
+    <li>The goal of the class is to get students interested in engineering.</li>
+    <li>This teaching opportunity was made possible by <br> MIT's MISTI <a href="http://misti.mit.edu/global-teaching-labs">Global Teaching Labs</a> program.</li>
+  </ul>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Homework!!!</h2>
+  <ul>
+    <li>Jan 19: <a href="https://intro-programming-slides.herokuapp.com/modules/basics/slides.html#/4">Bank exercises (partial)</a> due <a href="http://goo.gl/forms/Vc2dGxfX8o">HERE</a>.</li>
+    <li>Jan 19: <a href="https://intro-programming-slides.herokuapp.com/modules/practice/slides.html#/3/1">Review exercises (partial)</a> due <a href="http://goo.gl/forms/seGQ50h6iC">HERE</a>.</li>
+    <li>Jan 21: <a href="https://intro-programming-slides.herokuapp.com/modules/practice/slides.html#/3/1">Review exercises (complete)</a> due <a href="http://goo.gl/forms/seGQ50h6iC">HERE</a>.</li>
+    <li>Jan 24: <a href="https://intro-programming-slides.herokuapp.com/modules/practice/slides.html#/4">Password exercises (partial)</a> due <a href="http://goo.gl/forms/IprmFwyJiE">HERE</a>.</li>
+    <li>Jan 26: <a href="https://intro-programming-slides.herokuapp.com/modules/practice/slides.html#/4">Password exercises (complete)</a> due <a href="http://goo.gl/forms/IprmFwyJiE">HERE</a>.</li>    
+    <li>Jan 26: <a href="https://intro-programming-slides.herokuapp.com/modules/cryptography/slides.html#/5">Cryptography exercises (partial)</a> due <a href="http://goo.gl/forms/m6IaewBwbD">HERE</a>.</li>
+    <li>Jan 28: <a href="https://intro-programming-slides.herokuapp.com/modules/cryptography/slides.html#/5">Cryptography exercises (complete)</a> due <a href="http://goo.gl/forms/m6IaewBwbD">HERE</a>.</li>
+  </ul>
+  </section>
+  <section>
+  <h2>About homework</h2>
+  <ul>
+    <li>Homework will be graded on effort - I just want to see you're thinking and trying.</li>
+    <li>If you have questions, I will have office hours at 2:30pm. <br>Dates will be announced in class.</li>
+    <li>(partial) means I want you to work on the homework <br> until you get really stuck and can't do any more. <br> Submit what you've done at that point.</li>
+    <li>(complete) means I want you to submit the completed exercises.</li>
+    <li>Submit your code to the form - not the output.</li>
+  </ul>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Helpful resources</h2>
+  <ul>
+    <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">javascript reference</a> has tutorials and information on how javascript works.</li>
+    <li><a href="http://stackoverflow.com/">Stackoverflow</a> is a good place to ask questions or search for answers when coding.</li>
+    <li><a href="https://github.com/">Github</a> is a good place to look at other peoples' code for examples, and to share your code.</li>
+  </ul>
+  </section>
+  <section>
+  <h2>Helpful tutorials</h2>
+  <ul>
+    <li>I based my first exercises off of <a href="http://jsforcats.com/">Javascript for Cats.</a></li>
+    <li>Codecademy also has a good <a href="https://www.codecademy.com/learn/javascript">javascript tutorial</a> (and many others!)</li>
+    <li>Same for <a href="https://www.khanacademy.org/computing/computer-programming/programming">Khan Academy</a>.</li>
+    <li>There are a lot of resources out there for learning! Just dive in!</li>
+  </ul>
+  </section>  
+  <section>
+  <h2>Resources to learn more</h2>
+  <ul>
+    <li>Now that you know the basics, the possibilities are endless!</li>
+    <li>You can build a website using javascript with <a href="https://nodejs.org/en/">NodeJS</a>.</li>
+    <li>Learn more about software engineering and websites from MIT's <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-170-software-studio-spring-2013/lecture-notes/">Software Studio</a> class.</li>
+    <li>Learn more about security from MIT's <a href="http://css.csail.mit.edu/6.858/2015/">Systems Security</a> and <a href="http://courses.csail.mit.edu/6.857/2015/">Networks Security</a> classes.</li>
+    <li>And lots more... will you use your skills to do good for the world?</li>
+  </ul>
+  </section>
+</section>
+
+<section>
+  <h1>THE END</h1>
+</section>
+
+</div>
+  <!-- The navigational controls UI -->
+  <aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+  </aside>
+
+  <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+  <div class="progress"><span></span></div>
+  
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+<script src="../template/lib/js/head.min.js"></script>
+
+<script>
+  // Load the main reveal.js script
+  head.js( '../template/js/reveal.js', function() {
+    // Parse the query string into a key/value object
+    var query = {};
+
+    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+      query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+    } );
+
+    // Fires when a slide with data-state=customevent is activated
+    Reveal.addEventListener( 'customevent', function() {
+      print( '"customevent" has fired' );
+    } );
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    } );
+
+    Reveal.initialize({
+      // Display controls in the bottom right corner
+      controls: true,
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // If true; each slide will be pushed to the browser history
+      history: true,
+
+      // Loops the presentation, defaults to false
+      loop: false,
+
+      // Flags if mouse wheel navigation should be enabled
+      mouseWheel: true,
+
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+
+      // UI style
+      theme: query.theme || 'beige', // default/neon/beige
+
+      // Transition style
+      transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+  } );
+  
+  // Load third party scripts
+  head.js( '../template/lib/js/classList.js' );
+  head.js( '../template/lib/js/highlight.js', function() {
+    // Fire off syntax highlighting for potential code samples in the slides
+    hljs.initHighlightingOnLoad();
+  } );
+
+  // If we're runnning the notes server we need to include some additional JS
+  // TODO Is there a better way to determine if we're running the notes server?
+  if( window.location.host === 'localhost:1947' ) {
+    head.js( 'socket.io/socket.io.js', '../template/plugin/speakernotes/client.js' );
+  }
+</script>
+
+<script>
+
+  function popup(url) {
+    window.open(url);
+  }
+
+</script>
+
+</body>
+</html>
