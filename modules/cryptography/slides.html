@@ -173,9 +173,59 @@
     <li>What if you could use a smarter way of guessing private keys?</li>
     <li>What if you had quantum computers?</li>
   </ul>
+  </section>
+  <section>
+  <h2>Cryptography: Diffie-Hellman Key Exchange</h2>
+  <ul>
+    <li>Alice and Bob agree on a base g and modulus N (public!)</li>
+    <li>Each person chooses private key between 1 and N-1.</li>
+    <li>Alice's private key: a. Bob's private key: b.</li>
+    <li>Alice's public key: A = g^a mod N. <br> Bob's public key: B = g^b mod N</li>
+    <li>Alice and Bob can exchange A and B (public keys/colors).</li>
+  </ul>
+  </section>  
+  <section>
+  <h2>Cryptography: Diffie-Hellman Key Exchange</h2>
+  <ul>
+    <li>We need to combine the public keys (like the public colors)!</li>
+    <li>Alice computes: B^a mod N = (g^b)^a mod N = (g^(ab)) mod N</li>
+    <li>Bob computes: A^b mod N = (g^a)^b mod N = (g^(ab)) mod N</li>
+    <li>Now Alice and Bob BOTH know (g^(ab)) mod N, this is their secret!</li>
+  </ul>
+  </section>  
+  <section>
+  <h2>Cryptography: What could a hacker do?</h2>
+  <ul>
+    <li>Anyone listening can know: B = g^b mod N, A = g^a mod N.</li>
+    <li>From this, you cannot find (g^(ab)) mod N... because of mod!</li>
+    <li>For a hacker to be successful, must both listen and REPLACE Alice and Bob's messages to each other. (How would this work?)</li>
+  </ul>
   </section> 
+  <section>
+  <h2>Cryptography: Why does this matter?</h2>
+  <ul>
+    <li>Once you share a secret key, can exchange encrypted messages.</li>
+    <li>Http vs Https: can someone listen in and see your communications?</li>
+    <li>Diffie-Hellman key exchange is CRUCIAL to internet security!</li>
+    <li>DEMO (if we have time): wireshark</li>
+  </ul>
+  <h2>Cryptography: Conclusion</h2>
+  <ul>
+    <li>Cryptography: find new ways of encoding, exchanging keys.</li>
+    <li>Can we find a provably one-way function?</li>
+    <li>Can we crack existing encoding functions?</li>
+    <li>It's a constant battle against faster computers, smarter hackers.</li>
+  </ul>  
+  </section>   
+  <section>
+    <h2>Exercise: Generate a public key.</h2>
+    <ul>
+      <li>A person has a private key, and knows the base g and N.</li>
+      <li>Use this information to help that person generate their public key.</li>
+    </ul>  
+    <iframe src="code/pubkey.html" width="800" height="500" ></iframe>
+  </section>
 </section>
-
 <section>
   <h1>THE END</h1>
 </section>
