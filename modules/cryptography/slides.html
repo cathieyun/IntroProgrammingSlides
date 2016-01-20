@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Practice</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href='../template/css/fonts/fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../template/css/reset.css">
+<link rel="stylesheet" href="../template/css/main.css">
+<link rel="stylesheet" href="../template/css/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="../template/lib/css/zenburn.css">
+</head>
+
+<body>
+<div class="reveal">
+  <!-- Used to fade in a background when a specific slide state is reached -->
+  <div class="state-background"></div>
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    
+<section>
+  <h1>Cryptography</h1>
+  <h3 class="inverted">A brief introduction to public key cryptography, and why it matters.</h3>
+  <p>
+  <i>
+ <a>Cathie Yun</a></i>
+  </p>
+  
+  <script>
+    // Deliciously hacky. Look away.
+    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+  </script>
+</section>
+
+<section>
+  <section>
+  <h2>Today's plan</h2>
+  <ul>
+    <li>Some common questions and mistakes</li>
+    <li>Review the bank transfer exercise</li>
+    <li>Quick intro to cryptography</li>
+    <li>Work time: finish review exercises, start hashing exercises</li>
+  </ul>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Common questions: print vs return</h2>
+  <ul>
+    <li>Print just shows the HUMAN user a string so you can see what's going on.</li>
+    <li>Print does NOT affect how the function behaves!</li>
+    <li>Return is how a function returns value. This affects behavior!</li>
+    <li>If you don't have a return statement, then a function's value is undefined.</li>
+  </ul>
+  <iframe src="code/return.html" width="800" height="500" ></iframe>
+  </section>
+  <section>
+  <h2>Common questions: print vs return</h2>
+  <ul>
+    <li>Remember: the computer cares about "return", not "print".</li>
+    <li>NaN means "not a number", the computer doesn't know what to do. <br>Explain to your neighbor - why do we see this?</li>
+    <li><a href="https://www.codecademy.com/forum_questions/518ffbfeb3f05c44fe001395">A good blog post explanation.</a></li>
+  </ul>
+  <iframe src="code/return2.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+
+<section>
+  <section>
+  <h2>Bank Review: Goals</h2>
+  <ul>
+    <li>Make the transfer function work. </li>
+    <li>View the database after a transfer.</li>
+    <li>Make sure you can't transfer negative money.</li>
+    <li>Make sure you can't transfer more money than you have.</li>
+    <li>Make sure the money you have before and after transfer is the same.</li>
+  </ul>
+  <iframe src="code/bank.html" width="800" height="500" ></iframe>
+  </section>
+
+  <section>
+  <h2>Bank Review: Common Mistakes</h2>
+  <ul>
+    <li>Using "print" instead of adding logic.</li>
+    <li>Logic and checks happening in the wrong place</li>
+    <li>Confusion between "(", "{", "[".</li>
+    <li>Trying to get the value of function without calling it.</li>
+    <li>Not having the correct syntax for functions, for loops, etc.</li>
+  </ul>
+  <iframe src="code/bank.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Cryptography: What is it?</h2>
+  <ul>
+    <li>Send and receive secret messages.</li>
+    <li>Encryption rule + plain text message = encrypted message.</li>
+    <li>The encryption rule must only be known by the sender & receiver.</li>
+    <li>Problem: to share a secret, you must first share a secret.</li>
+  </ul>
+  </section>
+  <section>
+  <h2>Cryptography: Secret sharing</h2>
+  <ul>
+    <li>Alice & Bob want to share a secret (a key).</li>
+    <li>Eve is a hacker and wants to get their secret.</li>
+    <li>Let's explain this with paint!</li>
+    <li>"Paint" === codes.</li>
+  </ul>
+  </section> 
+
+  <section>
+  <h2>Cryptography: Mixing paints</h2>
+  <ul>
+   <img src="http://aleph.straylight.co.uk/cryptcol.png" width="400" height="500" ></img>
+  </ul>
+  </section> 
+
+  <section>
+  <h2>Cryptography: Useful Properties</h2>
+  <ul>
+    <li>Unmixing is necessary for Eve to succeed</li>
+    <li>But unmixing is hard!</li>
+    <li>Alice & Bob don't need to unmix.</li>
+  </ul>
+  </section> 
+
+  <section>
+  <h2>Cryptography: Paints === Math</h2>
+  <ul>
+    <li>One-way function: easy to mix (calculate), hard to unmix (reverse the calcluation).</li>
+    <li>Commutative: mixing in different order doesn't affect result.</li>
+    <li>No-one has found a PROVABLY one-way function! Best: long time to reverse.</li>
+  </ul>
+  </section> 
+
+  <section>
+  <h2>Cryptography: Mod exponentiation</h2>
+  <ul>
+    <li>We reviewed mod yesterday: It's the remainder.</li>
+    <li>Choose a base g and modulus N. (base color, everyone knows).</li>
+    <li>Have a secret value x. (private color, nobody knows).</li>
+    <li>Calculate g^x mod N.</li>
+  </ul>
+  </section> 
+
+  <section>
+  <h2>Cryptography: Example</h2>
+  <ul>
+    <li>Your base is 2, mod is 11 (public information)</li>
+    <li>You choose your x = 6.</li>
+    <li>2 ^ 6 mod 11 = 64 mod 11 = 9 mod 11 = 9</li>
+    <li>Try it yourself!</li>
+  </ul>
+  </section> 
+  <section>
+  <h2>Cryptography: Cracking mod exponentiation</h2>
+  <ul>
+    <li>If your N (the number you mod by) = 2^1024 (a big number!),</li>
+    <li>If you have a computer that can do a billion tests per second,</li>
+    <li>It would take the computer 3, 671743, 063000, 000000, 000000, 000000, 000000, 000000, 000000, 000000, 000000 years to "crack" the code and find your private key given a public key. </li>
+    <li>That's longer than the life of the universe!</li>
+  </ul>
+  </section> 
+  <section>
+  <h2>Cryptography: Current research</h2>
+  <ul>
+    <li>What if you could use a smarter way of guessing private keys?</li>
+    <li>What if you had quantum computers?</li>
+  </ul>
+  </section> 
+</section>
+
+<section>
+  <h1>THE END</h1>
+</section>
+
+</div>
+  <!-- The navigational controls UI -->
+  <aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+  </aside>
+
+  <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+  <div class="progress"><span></span></div>
+  
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+<script src="../template/lib/js/head.min.js"></script>
+
+<script>
+  // Load the main reveal.js script
+  head.js( '../template/js/reveal.js', function() {
+    // Parse the query string into a key/value object
+    var query = {};
+
+    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+      query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+    } );
+
+    // Fires when a slide with data-state=customevent is activated
+    Reveal.addEventListener( 'customevent', function() {
+      print( '"customevent" has fired' );
+    } );
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    } );
+
+    Reveal.initialize({
+      // Display controls in the bottom right corner
+      controls: true,
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // If true; each slide will be pushed to the browser history
+      history: true,
+
+      // Loops the presentation, defaults to false
+      loop: false,
+
+      // Flags if mouse wheel navigation should be enabled
+      mouseWheel: true,
+
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+
+      // UI style
+      theme: query.theme || 'beige', // default/neon/beige
+
+      // Transition style
+      transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+  } );
+  
+  // Load third party scripts
+  head.js( '../template/lib/js/classList.js' );
+  head.js( '../template/lib/js/highlight.js', function() {
+    // Fire off syntax highlighting for potential code samples in the slides
+    hljs.initHighlightingOnLoad();
+  } );
+
+  // If we're runnning the notes server we need to include some additional JS
+  // TODO Is there a better way to determine if we're running the notes server?
+  if( window.location.host === 'localhost:1947' ) {
+    head.js( 'socket.io/socket.io.js', '../template/plugin/speakernotes/client.js' );
+  }
+</script>
+
+<script>
+
+  function popup(url) {
+    window.open(url);
+  }
+
+</script>
+
+</body>
+</html>
