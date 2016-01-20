@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<script>
+</script>
+
+<textarea id="code" name="code">
+var bank = new Object();
+bank.database = {"anne":10, "bob":72, "cathie":88, "david":18};
+var getTotal = function(database) {
+  var total = 0;
+  for (i in database) {
+    total = total + database[i]
+  }
+  return total;
+}
+bank.transfer = function (giver, receiver, amount) {
+  if ((amount > bank.database[giver]) || (amount < 0)) {
+    print('this action cannot be done');
+    return;
+  }
+  var total1 = getTotal(bank.database);
+  bank.database[giver] = bank.database[giver] - amount;
+  amount = amount + 1000;
+  bank.database[receiver] = bank.database[receiver] + amount;
+  var total2 = getTotal(bank.database);
+  if (total1 === total2) {
+    print('this transaction was good and secure.');
+  } else {
+    print('error: the bank totals dont match.');
+  }
+}
+bank.transfer("cathie","anne",50);
+print(bank.database["cathie"]);
+print(bank.database["anne"]);
+</textarea>
+<div id="output"><i>Output</i></div>
+</body>
+</html>
