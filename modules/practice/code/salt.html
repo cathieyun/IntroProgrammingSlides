@@ -33,6 +33,9 @@ website.getHash = function(string){
   }
   return hash;
 }
+website.getSalt = function(){
+  return Math.floor((Math.random() * 10000) + 1);
+}
 // Your code here:
 
 // These calls should return true: 
