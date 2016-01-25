@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<script>
+</script>
+
+<textarea id="code" name="code">
+var website = new Object();
+website.database = {'Cathie': 1920838757, 'Amy': 566088258, 'Bob': 864103032}
+website.salts = {'Cathie': 4647, 'Amy': 5309, 'Bob': 6875}
+website.getHash = function(string){
+  var hash = 0;
+  if (string.length === 0) return hash;
+  for (i = 0; i < string.length; i++) {
+      char = string.charCodeAt(i);
+      hash = ((hash<<5)-hash)+char;
+      hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+}
+website.getSalt = function(){
+  return Math.floor((Math.random() * 10000) + 1);
+}
+// Your code here:
+
+// These calls should return true: 
+website.register("dave", "davespassword");
+print(true === website.login("dave", "davespassword"));
+print(false === website.login("dave", "notdavespassword"));
+print(false === website.login("evan", "doesnotexit"));
+</textarea>
+<div id="output"><i>Output</i></div>
+
+</body>
+</html>

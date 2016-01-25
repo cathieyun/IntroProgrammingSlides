@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Practice</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href='../template/css/fonts/fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../template/css/reset.css">
+<link rel="stylesheet" href="../template/css/main.css">
+<link rel="stylesheet" href="../template/css/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="../template/lib/css/zenburn.css">
+</head>
+
+<body>
+<div class="reveal">
+  <!-- Used to fade in a background when a specific slide state is reached -->
+  <div class="state-background"></div>
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    
+<section>
+  <h1>Clarificaiton & Cryptography</h1>
+  <h3 class="inverted">Clarifying concepts that are confusing some students, followed by</br>a brief introduction to public key cryptography, and why it matters.</h3>
+  <p>
+  <i>
+ <a>Cathie Yun</a></i>
+  </p>
+  
+  <script>
+    // Deliciously hacky. Look away.
+    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+  </script>
+</section>
+
+<section>
+  <section>
+  <h2>Today's plan</h2>
+  <ul>
+    <li>Clarifying common questions and mistakes</li>
+    <li>Review the login exercises</li>
+    <li>Quick intro how websites work</li>
+    <li>Website attacks and how to prevent them</li>
+    <li>Work on homework: salting</li>
+  </ul>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Common questions: where is the user input?</h2>
+  <ul>
+    <li>In Javascript, user input is usually fetched from the front-end.</li>
+    <li>I will demo how to do this in the how-a-website-works demo.</li>
+  </ul>
+  </section>
+  <section>
+  <h2>Common questions: how do functions get their variables?</h2>
+  <ul>
+    <li>Function inputs: the stuff between the () </li>
+    <li>Function variable are created that only exist within the {} of the function.</li>
+    <li>Function variables' values are assigned from the function inputs.</li>
+  </ul>
+  <iframe src="code/function.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+
+<section>
+  <section>
+  <h2>Login Review</h2>
+  <ul>
+    <li>Make the register and login functions work. </li>
+    <li>Register: add keys and values to a dictionary.</li>
+    <li>Login: check values against stored values in a dictionary.</li>
+    <li>Understand the difference between print and return.</li>
+  </ul>
+  <iframe src="code/website.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+<section>
+  <section>
+  <h2>Websites: Front-end</h2>
+  <ul>
+    <li>Front-end: code that runs on your computer</li>
+    <li>HTML, CSS: control the appearances</li>
+    <li>JavaScript: controls logic (clicking, interacting).</li>
+    <li>You can see all the front-end code yourself! DEMO</li>
+  </ul>
+  </section>
+  <section>
+  <h2>Websites: Form filling</h2>
+  <ul>
+    <li>You enter text into a text box.</li>
+    <li>Javascript finds the box, gets the input - a string.</li>
+    <li>It can save it to a variable, or use it directly.</li>
+    <li>DEMO</li>
+  </ul>
+  </section>
+  <section>
+  <h2>Websites: Back-end</h2>
+  <ul>
+    <li>When your command / website entry reaches their server.</li>
+    <li>POST, GET, PUT, DELETE commands</li>
+    <li>Routes: where your command goes to.</li>
+    <li>DEMO</li>
+  </ul>
+  </section> 
+</section> 
+<section>
+  <section>
+    <h2>Websites: Code Injection attack</h2>
+    <ul>
+      <li>Goal: log in to the website as a user that is not you.</li>
+      <li>Limitation: you don't know other peoples' passwords.</li>
+      <li>Advantage: you can create messages to send to the server.</li>
+      <li>Knowledge: <a href="https://docs.mongodb.org/manual/reference/operator/query/gt/">{$gt: ""}</a> will give you the first thing in the database.</li>
+      <li>Weakness: inputs are not sanitized on this website!</li>
+    </ul>  
+  </section>
+  <section>
+    <h2>Websites: Code Injection attack demo</h2>
+    <ul>
+      <li><a href="https://github.com/evanwang22/6170-r9">Demo code here!</a></li>
+      <li>DEMO how a code injection attack works</li>
+    </ul>  
+  </section>  
+  <section>
+    <h2>Websites: Input sanitization</h2>
+    <ul>
+      <li>JSON.stringify will get rid of all "weird" characters.</li>
+      <li>This will help keep input text from being interpreted as commands.</li>
+      <li>Think like a hacker: what can you do to get around this?</li>
+      <li>DEMO</li>
+    </ul>  
+  </section>  
+  <section>
+    <h2>Websites: Cross-site-scripting (XSS)</h2>
+    <ul>
+      <li>Remember <a href="https://xkcd.com/327/ ">this comic? </a></li>
+      <li>Inject SQL code directly into database through user input</li>
+      <li>Prevent the same way: input sanitization</li>
+      <li>Play with <a href="https://github.com/evanwang22/6170-r9">the code</a> yourself, figure out how to do the exploit!</li>
+    </ul>  
+  </section>  
+  <section>
+    <h2>Websites: Many many more attacks!</h2>
+    <ul>
+      <li>In <a href="https://github.com/evanwang22/6170-r9">the demo code</a> you can also do a CSRF attack.</li>
+      <li>CSRF = cross-site request forgery. Another site pretends to be the victim site, uses the victim site's credentials.</li>
+      <li>Hackers are always coming up with more ways to get your information.</li>
+      <li>Security experts are always coming up with ways to make computers more secure.</li>
+    </ul>  
+  </section>  
+</section>
+
+<section>
+  <section>
+  <h2>Exercises: Passwords with hashing</h2>
+  <ul>
+    <li>Implement the website object, this time use hashing!</li>
+    <li>Hash the password before saving it (in register)</li>
+    <li>Hash the password before checking it (in login)</li>
+    <li>When you're done, submit these exercises <a href="http://goo.gl/forms/fSs8dSZW1U">HERE</a>.</li>
+  </ul>
+  <iframe src="code/hash.html" width="800" height="500" ></iframe>
+  </section>
+  <section>
+  <h2>Exercises: You stole the database!</h2>
+  <ul>
+    <li>You hacked into the system and stole the hashed database!</li>
+    <li>How are you going to use the database to get peoples' passwords?</li>
+    <li>Hint: get the hashes for common passwords, and check them!</li>
+  </ul>
+  <iframe src="code/hacked.html" width="800" height="500" ></iframe>
+  </section>
+  <section>
+  <h2>Exercises: Passwords with salting</h2>
+  <ul>
+    <li>Implement the website object, this time use salted hashing!</li>
+    <li>You'll have to add a "salt" attribute to "website".</li>
+    <li>Make a salt, hash it with the password before saving it (in register)</li>
+    <li>Get the salt, hash it with the password before checking it (in login)</li>
+  </ul>
+  <iframe src="code/salt.html" width="800" height="500" ></iframe>
+  </section>
+</section>
+
+<section>
+  <h1>THE END</h1>
+</section>
+
+</div>
+  <!-- The navigational controls UI -->
+  <aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+  </aside>
+
+  <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+  <div class="progress"><span></span></div>
+  
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+<script src="../template/lib/js/head.min.js"></script>
+
+<script>
+  // Load the main reveal.js script
+  head.js( '../template/js/reveal.js', function() {
+    // Parse the query string into a key/value object
+    var query = {};
+
+    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+      query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+    } );
+
+    // Fires when a slide with data-state=customevent is activated
+    Reveal.addEventListener( 'customevent', function() {
+      print( '"customevent" has fired' );
+    } );
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    } );
+
+    Reveal.initialize({
+      // Display controls in the bottom right corner
+      controls: true,
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // If true; each slide will be pushed to the browser history
+      history: true,
+
+      // Loops the presentation, defaults to false
+      loop: false,
+
+      // Flags if mouse wheel navigation should be enabled
+      mouseWheel: true,
+
+      // Apply a 3D roll to links on hover
+      rollingLinks: true,
+
+      // UI style
+      theme: query.theme || 'beige', // default/neon/beige
+
+      // Transition style
+      transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+  } );
+  
+  // Load third party scripts
+  head.js( '../template/lib/js/classList.js' );
+  head.js( '../template/lib/js/highlight.js', function() {
+    // Fire off syntax highlighting for potential code samples in the slides
+    hljs.initHighlightingOnLoad();
+  } );
+
+  // If we're runnning the notes server we need to include some additional JS
+  // TODO Is there a better way to determine if we're running the notes server?
+  if( window.location.host === 'localhost:1947' ) {
+    head.js( 'socket.io/socket.io.js', '../template/plugin/speakernotes/client.js' );
+  }
+</script>
+
+<script>
+
+  function popup(url) {
+    window.open(url);
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+<textarea id="code" name="code">
+var print_a_number = function(num){
+  print(num);
+}
+var return_a_number = function(num){
+  return(num);
+}
+var add_numbers = function(num1, num2) {
+  return(num1 + num2);
+}
+
+print_a_number(7);
+// return_a_number(2);
+// print(return_a_number(2));
+// add_numbers(8, 9);
+// var addition = add_numbers(8, 9);
+// print(addition);
+// print(add_numbers(8, 9));
+</textarea>
+
+<div id="output"><i>Output</i></div>
+</body>
+</html>
+

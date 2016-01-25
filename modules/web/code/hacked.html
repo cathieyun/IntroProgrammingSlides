@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- utf8 encoding essential for funny characters in Ascii art below -->
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="../../template/css/codestyles.css">
+    <script src="../../template/js/codeeditor.js"></script>
+    <style>
+    canvas {position: absolute; left: 580px; top: 67px}
+    </style>    
+</head>
+<body>
+
+<div id="buttons">
+  <input type="submit" value="run" id="runIntro" onclick="slide.runCode();"/>
+  <input type="submit" value="clear output" id="clearOutput" onclick="clearOutputBox();"/>
+  <input type="submit" value="revert" id="reloadCode" onclick="location.reload();"/>
+</div>
+
+<canvas id="canvas" height="200" width="200"></canvas>
+
+<textarea id="code" name="code">
+stolenData= {'Cathie': 1281629883, 'Amy': 46792755, 'Bob': 1216985755};
+var getHash = function(string){
+  var hash = 0;
+  if (string.length === 0) return hash;
+  for (i = 0; i < string.length; i++) {
+      char = string.charCodeAt(i);
+      hash = ((hash<<5)-hash)+char;
+      hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+}
+// Your code here: get & print users' login information!
+</textarea>
+
+<div id="output"><i>Output</i></div>
+</body>
+</html>
