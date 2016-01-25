@@ -22,7 +22,8 @@
 
 <textarea id="code" name="code">
 var website = new Object();
-website.database = {};
+website.database = {'Cathie': 1920838757, 'Amy': 566088258, 'Bob': 864103032}
+website.salts = {'Cathie': 4647, 'Amy': 5309, 'Bob': 6875}
 website.getHash = function(string){
   var hash = 0;
   if (string.length === 0) return hash;
